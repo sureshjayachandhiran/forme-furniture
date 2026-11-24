@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;450;500;550;600&family=Libre+Caslon+Display&display=swap');
+@import 'tailwindcss';
+
+.figma-custom-code-fragment {
+  display: contents;
+}
+
+.figma-bypass-link {
+  position: fixed;
+  top: 8px;
+  left: 8px;
+  z-index: 2147483647;
+  transform: translateY(-150%);
+  border-radius: 6px;
+  background: #111827;
+  color: #fff;
+  padding: 8px 12px;
+  font:
+    600 14px/1.2 system-ui,
+    sans-serif;
+  text-decoration: none;
+}
+
+.figma-bypass-link:focus {
+  transform: translateY(0);
+}
+
+@theme {
+  --font-sans: 'DM Sans', sans-serif;
+  --font-editorial: 'Libre Caslon Display', Georgia, serif;
+}
+@layer base {
+  body {
+    font-family: var(--font-sans);
+  }
+  button,
+  summary,
+  a,
+  select {
+    -webkit-tap-highlight-color: transparent;
+  }
+  button,
+  summary {
+    cursor: pointer;
+  }
+  button:disabled {
+    cursor: not-allowed;
+  }
+  :focus-visible {
+    outline: 2px solid #778364;
+    outline-offset: 4px;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+}
+.navlink {
+  position: relative;
+}
+.navlink:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -7px;
+  width: 0;
+  height: 1px;
+  background: #69745d;
+  transition: width 0.25s;
+}
+.navlink:hover:after {
+  width: 100%;
+}
